@@ -1,0 +1,154 @@
+body,html{
+  height:100%;
+  width:100%;
+
+}
+body{
+  background-color: black;
+  color:white;
+}
+.jumbotron{
+  position: fixed;
+  bottom: 0;
+  width: 50%;
+  margin:0 auto;
+  background-color: Silver;
+  height:15%;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.jumbo-font{
+  color:black;
+  margin-top: 0;
+}
+.jumbo-font h5{
+  font-size: 30px;
+  margin-top: 0;
+}
+.jumbo-font i{
+  font-size: 35px;
+  margin-top: 0;
+  margin-left: 10px;
+}
+.phone{
+  display:inline-block;
+}
+.jumbotron p{
+  margin-bottom: 0px;
+  /* border-bottom: 0px; */
+}
+#home{
+  margin:0 auto;
+}
+.side-image{
+  width:50%;
+  height:100%;
+  position: fixed;
+  float:left;
+  border:0;
+  margin:0;
+  padding:0;
+}
+.side-image img{
+  height:inherit;
+}
+.self-image{
+  width:50%;
+  height:100%;
+  float:right;
+  border:0;
+  margin:0;
+
+  padding:0;
+}
+
+/* Skills Div */
+#skills{
+  margin:0 auto;
+  display: none;
+}
+.left-image{
+  width:50%;
+  height:100%;
+  position: fixed;
+  float:left;
+  border:0;
+  margin:0;
+  padding:0;
+}
+.left-image img{
+  height:inherit;
+}
+.right-image{
+  width:50%;
+  height:100%;
+  float:right;
+  border:0;
+  margin:0;
+
+  padding:0;
+
+}
+.skill-image{
+  height:90px;
+  width:90px;
+}
+.skills-logo{
+  display:inline-flex;
+}
+.skills-p{
+  font-size: 21px;
+  justify-content: flex-start;
+  font-family: 'Karma', serif;
+}
+.row{
+  margin-left: 0;
+  margin-right: 0;
+
+}
+.bold{
+  font-weight: bold;
+}
+/* End of Skills Div */
+
+
+/* Start of  Projects Div */
+#projects{
+  margin:0 auto;
+  display: none;
+}
+/* End of Projects Div */
+
+
+/* Start of Contact Div */
+#contact{
+  margin:0 auto;
+  display: none;
+}
+/* End of Projects Div */
+
+.navbar-default{
+  border:0;
+  margin:0;
+  padding:0;
+}
+.profile-pic{
+  margin-top: 8%;
+  border-radius: 50%;
+  /* width: calc(25.333% - 1rem); */
+  width: 350px;
+  height: 350px;
+  background-size: cover;
+}
+h1{
+  font-size: 4em;
+  font-family: 'El Messiri', sans-serif;
+}
+h2{
+  font-size: 3em;
+  font-family: 'Julius Sans One', sans-serif;
+}
+#skills-h2{
+  font-size: 2.2em;
+  font-family: 'Julius Sans One', sans-serif;
+}

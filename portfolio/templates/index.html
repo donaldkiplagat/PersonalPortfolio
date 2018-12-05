@@ -1,11 +1,125 @@
+{% load bootstrap3 %}
+{% load static %}
+
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Donald Kiplagat</title>
+
+    {% block styles %}
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC|El+Messiri|Julius+Sans+One|Karma|Poiret+One|Sorts+Mill+Goudy|Source+Code+Pro" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.png' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% endblock %}
+
   </head>
+
   <body>
-    <h1>Welcome</h1>
+    {% include 'navbar.html' %}
+
+    {% block content %}
+    <div id="home">
+      <div class="side-image ">
+        <img class="img-responsive" src="{% static 'img/abstract.jpg'%}">
+      </div>
+
+      <div class="self-image ">
+        <div class="text-center">
+          <img class="profile-pic" src="{{profile.avatar.url}}">
+          <h1>{{profile.firstname}} {{profile.secondname}}</h1>
+          <h2>{{profile.description | safe}}</h2>
+
+        </div>
+
+        <div class="jumbotron jumbo-font">
+          <div class="text-center">
+            <h5>Contacts</h5>
+            <i class="fab fa-github"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-linkedin"></i>
+            <i class="fab fa-google-plus"></i><br>
+            <div class="phone">
+              <p class="email">Email: donald.k.kiplagat@gmail.com</p>
+              <p >Phone number: +254-706-426472</p>
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+    </div>
+
+    <div id="skills">
+      <div class="left-image">
+        <img class="img-responsive" src="{% static 'img/glass.jpeg'%}">
+      </div>
+
+      <div class="right-image ">
+        <div class="text-center">
+          <h1>Skills</h1>
+          <h2 id="skills-h2">Technical Skills</h1>
+
+            <div class="row">
+            {% for skill in skills %}
+            <div class="col-md-3">
+              <div class="text-center">
+                <div class="skills-logo">
+                  <img class="skill-image img-responsive" src="{{skill.skillslogo.url}}">
+                </div>
+                <p class="skills-p">{{skill.skills}}</p>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+
+          <h2 id="skills-h2">Hobbies & Interests</h1>
+            <div class="row">
+              <div class="col-md-6">
+                <p class="skills-p"><span class="bold">Acting</span> - member of Film & Arts Company called 'Khweva'</p>
+                <p class="skills-p"><span class="bold">Mentoring(Mental Health & Presentation Skills)</span> - part of 'Fmile Official' movement for mentoring those affected with mental health</p>
+
+                <p class="skills-p"><span class="bold">Reading</span> - a lover of mediaval and fantasy novels. J.K. Rowling's 'Harry Potter' series is one of my favourite selections.</p>
+
+              </div>
+
+              <div class="col-md-6">
+                <p class="skills-p"><span class="bold">Entrepreneurship and Innovation</span> - part of 'Leap Hub' movement based on developing innovators from a young age </p>
+                <p class="skills-p"><span class="bold">Music</span> - singer at 'Khweva',was also part of the school choir in highschool</p>
+
+                <p class="skills-p"><span class="bold">Games(Chess)</span> - played chess at Strathmore University,started playing at an early age</p>
+
+              </div>
+            </div>
+
+        </div>
+      </div>
+
+    </div>
+
+
+    <div id="projects">
+      <h1>Projects</h1>
+
+    </div>
+
+    <div id="contact">
+      <h1>Contact</h1>
+
+    </div>
+
+    {% endblock %}
+
+
+    {% block scripts %}
+    <script  src="https://code.jquery.com/jquery-3.3.1.js" ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{% static 'js/script.js' %}" ></script>
+    {% endblock %}
 
   </body>
 </html>
