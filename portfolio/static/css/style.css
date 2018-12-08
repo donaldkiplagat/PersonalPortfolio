@@ -17,6 +17,9 @@ body{
   padding-top: 0px;
   padding-bottom: 0px;
 }
+.jumbo-font a{
+  color: black;
+}
 .jumbo-font{
   color:black;
   margin-top: 0;
