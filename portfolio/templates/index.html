@@ -10,6 +10,9 @@
 
     {% block styles %}
     {% bootstrap_css %}
+    <script src="https://rawgit.com/alvarotrigo/fullPage.js/dev/src/fullpage.js"></script>
+    <link rel="stylesheet" href="https://rawgit.com/alvarotrigo/fullPage.js/dev/src/fullpage.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC|El+Messiri|Julius+Sans+One|Karma|Poiret+One|Sorts+Mill+Goudy|Source+Code+Pro" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.png' %}">
@@ -19,108 +22,117 @@
   </head>
 
   <body>
-    {% include 'navbar.html' %}
 
     {% block content %}
-    <div id="home">
-      <div class="side-image ">
-        <img class="img-responsive" src="{% static 'img/abstract.jpg'%}">
-      </div>
 
-      <div class="self-image ">
+
+    <div id="fullpage">
+
+    <div id="home" class="section">
         <div class="text-center">
           <img class="profile-pic" src="{{profile.avatar.url}}">
-          <h1>{{profile.firstname}} {{profile.secondname}}</h1>
-          <h2>{{profile.description | safe}}</h2>
 
-        </div>
+          <h1 class="ml6">
+            <span class="text-wrapper">
+              <span class="letters">Hi! My name is </span>
+            </span>
+          </h1>
 
-        <div class="jumbotron jumbo-font">
-          <div class="text-center">
-            <h5>Contacts</h5>
-            <a href="https://github.com/donaldkiplagat"><i class="fab fa-github"></i></a>
-            <a href="https://www.instagram.com/donald_kiplagat/"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/donald-k-78b415116/"><i class="fab fa-linkedin"></i></a>
-            <a href="https://plus.google.com/u/0/112665558240174579469"><i class="fab fa-google-plus"></i></a><br>
-            <div class="phone">
-              <p class="email">Email: donald.k.kiplagat@gmail.com</p>
-              <p>Phone number: +254-706-426472</p>
-            </div>
-          </div>
+          <h1 class="ml2">{{profile.firstname}} {{profile.secondname}}<span>,</span></h1><br>
 
+          <h2 class="ml2">I'm a </h2><br>
 
-        </div>
-
+        <h2 class="ml1">
+          <span class="text-wrapper">
+            <span class="line line1"></span>
+            <span class="letters">{{profile.description | safe}}</span>
+            <span class="line line2"></span>
+          </span>
+        </h1>
       </div>
+
+
+
     </div>
 
-    <div id="skills">
-      <div class="left-image">
-        <img class="img-responsive" src="{% static 'img/glass.jpeg'%}">
-      </div>
+    <div id="skills" class="section">
+      <div class="text-center skills-page">
+        <h1 class="ml16">My Skills</h1>
+        <h1 class="ml16">Technical Skills</h1>
 
-      <div class="right-image ">
-        <div class="text-center">
-          <h1>Skills</h1>
-          <h2 id="skills-h2">Technical Skills</h1>
-
-            <div class="row">
+          <div class="row">
             {% for skill in skills %}
-            <div class="col-sm-6 col-md-3 col-lg-3">
+            <div class="col-xs-4 col-sm-4 col-md-3 col-md-3">
               <div class="text-center">
                 <div class="skills-logo">
                   <img class="skill-image img-responsive" src="{{skill.skillslogo.url}}">
                 </div>
-                <p class="skills-p">{{skill.skills}}</p>
+                <h3 class="skills-p">{{skill.skills}}</h3>
               </div>
             </div>
             {% endfor %}
           </div>
 
-          <h2 id="skills-h2">Hobbies & Interests</h1>
-            <div class="row">
-              <div class="col-md-6">
-                <p class="skills-p"><span class="bold">Acting</span> - member of Film & Arts Company called 'Khweva'</p>
-                <p class="skills-p"><span class="bold">Mentoring(Mental Health & Presentation Skills)</span> - part of 'Fmile Official' movement for mentoring those affected with mental health</p>
 
-                <p class="skills-p"><span class="bold">Reading</span> - a lover of mediaval and fantasy novels. J.K. Rowling's 'Harry Potter' series is one of my favourite selections.</p>
 
-              </div>
 
-              <div class="col-md-6">
-                <p class="skills-p"><span class="bold">Entrepreneurship and Innovation</span> - part of 'Leap Hub' movement based on developing innovators from a young age </p>
-                <p class="skills-p"><span class="bold">Music</span> - singer at 'Khweva',was also part of the school choir in highschool</p>
+      <h1 id="skills-h2" class="ml16">Hobbies & Interests</h1>
+        <!-- <div class="row"> -->
+          <!-- <div class="col-md-6"> -->
+            <h3 class="skills-p"><span class="bold">Acting</span> - member of Film & Arts Company called 'Khweva'</h3>
+            <h3 class="skills-p"><span class="bold">Mentoring(Mental Health & Presentation Skills)</span> - part of 'Fmile Official' movement for mentoring those affected with mental health</h3>
 
-                <p class="skills-p"><span class="bold">Games(Chess)</span> - played chess at Strathmore University,started playing at an early age</p>
+            <h3 class="skills-p"><span class="bold">Reading</span> - a lover of mediaval and fantasy novels. J.K. Rowling's 'Harry Potter' series is one of my favourite selections.</h3>
 
+          <!-- </div> -->
+
+          <!-- <div class="col-md-6"> -->
+            <h3 class="skills-p"><span class="bold">Entrepreneurship and Innovation</span> - part of 'Leap Hub' movement based on developing innovators from a young age </h3>
+            <h3 class="skills-p"><span class="bold">Music</span> - singer at 'Khweva',was also part of the school choir in highschool</h3>
+
+            <h3 class="skills-p"><span class="bold">Games(Chess)</span> - played chess at Strathmore University,started playing at an early age</h3>
+
+          <!-- </div> -->
+        <!-- </div> -->
+
+      </div>
+
+    </div>
+
+
+    <div id="projects" class="section">
+      <div class="text-center">
+        <div class="slide" data-anchor="slide1">
+          <h1>My Projects</h1>
+        </div>
+        <div class="slide" data-anchor="slide2">
+           <img class="project-pics bottom" src="{% static 'img/ighome.png' %}" alt="Snow" style="width:100%;">
+            <div class="centered">
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Instagram Clone</h3>
+                </div>
+                <div class="panel-body">
+                  <h4>My attempt at cloning the famous social media site: Instagram</h4>
+                </div>
+                <div class="panel-footer">
+                  <a href="#" class="btn btn-primary">View Code</a>
+                  <a href="#" class="btn btn-danger">Visit Site</a>
+
+                </div>
               </div>
             </div>
-
         </div>
       </div>
-
     </div>
 
 
-    <div id="projects">
-      <div class="left-image">
-        <div class="text-center">
-          <h1>Django Projects</h1>
-        </div>
-      </div>
-
-      <div class="right-image ">
-        <div class="text-center">
-          <h1>Flask Projects</h1>
-        </div>
-      </div>
-
+    <div id="contact" class="section">
     </div>
 
-    <div id="contact">
-      <h1>Contact</h1>
+  </div>
 
-    </div>
+
 
     {% endblock %}
 
